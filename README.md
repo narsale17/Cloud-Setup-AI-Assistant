@@ -37,15 +37,8 @@ With a simple text input like *"Create an EC2 instance with 4GB RAM"*, the AI as
 3️⃣ **User selects a deployment method**:  
    - Step-by-step **GUI-based instructions**  
    - **CLI command generation**  
-   - **Automated provisioning (if enabled)**
+   - **Automated provisioning (if enabled)**  
 4️⃣ **Deployment completes, reducing setup time** 🎯  
 
 ---
-
-## 📌 **Installation**  
-
-### **1️⃣ Clone the repository**  
-```bash
-git clone https://github.com/yourusername/cloud-setup-simplified.git
-cd cloud-setup-simplified
 

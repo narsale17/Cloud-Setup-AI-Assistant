@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Setup Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Google Cloud Setup Assistant</h1>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-container">
+        <!-- Left Panel: Information Section -->
+        <div class="info-panel">
+            <p>This assistant will help you set up cloud resources easily.</p>
+            <h3>How to Use:</h3>
+            <ol>
+                <li><strong>Describe your needs:</strong> Type what cloud services you need, such as VMs, databases, or storage.</li>
+                <li><strong>Understand the plan:</strong> The assistant will generate a structured plan for your setup.</li>
+                <li><strong>Choose your setup method:</strong>
+                    <ul>
+                        <li><strong>Command-line:</strong> Get ready-to-use CLI commands.</li>
+                        <li><strong>Console Steps:</strong> Follow manual instructions.</li>
+                        <li><strong>Auto-Provision:</strong> The system can configure resources automatically.</li>
+                    </ul>
+                </li>
+                <li><strong>Deploy & Verify:</strong> Follow the generated steps and confirm your cloud setup is correct.</li>
+            </ol>
+            <h3>Benefits:</h3>
+            <ul>
+                <li>✔️ No technical expertise required</li>
+                <li>✔️ Saves time in setting up cloud services</li>
+                <li>✔️ Provides step-by-step instructions</li>
+            </ul>
+        </div>
+
+        <!-- Right Panel: Chat Container -->
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box"></div>
+
+            <!-- Chat Input -->
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your setup plan..." onkeydown="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+
+            <!-- Final Options Section -->
+            <div id="final-options" style="display:none; text-align:center; margin-top: 20px;">
+                <h3>How would you like to proceed?</h3>
+                <button onclick="handleFinalStep('gui')">1️⃣ GUI Steps</button>
+                <button onclick="handleFinalStep('cli')">2️⃣ CLI Commands</button>
+                <button onclick="handleFinalStep('auto-configure')">3️⃣ Auto-Configure</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <!-- User Info Popup -->
+    <div id="user-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Heyy this is SIFY, your Cloud Assistant!</h2>
+            <p>Tell me a bit about yourself:</p>
+    
+            <!-- Name Input -->
+            <input type="text" id="user-name" placeholder="What's your name?" required>
+    
+            <!-- Experience Dropdown with Placeholder -->
+            <select id="user-experience" required>
+                <option value="" disabled selected>What's your GCP experience?</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Expert">Expert</option>
+            </select>
+    
+            <button onclick="submitUserInfo()">Start</button>
+        </div>
+    </div>    
+
+    <style>
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+    .popup-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        width: 300px;
+    }
+    .popup-content input,
+    .popup-content select {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+    }
+    .popup-content button {
+        background-color: #4285f4;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
+</body>
+</html>

@@ -1,3 +1,5 @@
+# to check the list of gen ai models by google available, and to choose as we require
+
 import google.generativeai as genai
 
 # Configure your API key

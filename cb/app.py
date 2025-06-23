@@ -7,7 +7,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = '123456778'
 
 # Configure the Gemini API
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAg_2eibUL8r7qODzAqTHYJVqhW3g23kCI"
+os.environ["GOOGLE_API_KEY"] = "your-api-key"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("models/gemini-2.0-flash")
 chat = model.start_chat()

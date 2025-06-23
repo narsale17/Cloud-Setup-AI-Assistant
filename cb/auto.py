@@ -1,3 +1,5 @@
+# this is an attempt to code the autocomplete feature 
+
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from playwright.sync_api import sync_playwright
